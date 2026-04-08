@@ -7,7 +7,7 @@
     'website': 'https://weberq.in',
     'depends': ['web'],
     'data': [
-        # You will add XML files here later to remove the "Powered by Odoo" footer
+        'views/layout_templates.xml',
     ],
     'assets': {
         'web._assets_primary_variables': [

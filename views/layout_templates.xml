@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="weberq_login_footer" inherit_id="web.login_layout">
+        <xpath expr="//div[@t-if='not disable_footer']" position="replace">
+            <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                <span class="text-muted">© 2026 WeberQ Global Pvt Ltd.</span>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="weberq_portal_footer" inherit_id="web.frontend_layout">
+        <xpath expr="//div[contains(@class, 'o_footer_copyright')]" position="replace">
+            <div class="o_footer_copyright py-3">
+                <div class="container d-flex justify-content-between align-items-center">
+                    <span>Quantum-grade Industrial Tech | WeberQ</span>
+                    <span class="text-muted">© 2026 All Rights Reserved.</span>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
