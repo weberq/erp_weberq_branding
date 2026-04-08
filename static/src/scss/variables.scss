@@ -1,0 +1,32 @@
+/* Overriding the core Odoo variables for WeberQ Branding */
+
+// Brand Colors - High-End Industrial Tech Theme
+$o-brand-odoo: #0f172a;       /* Deep Slate for the core brand */
+$o-brand-primary: #0ea5e9;    /* Quantum Cyan for primary buttons/actions */
+$o-brand-secondary: #475569;  /* Slate for secondary elements */
+
+// Core Bootstrap variable mappings
+$primary: $o-brand-primary;
+$secondary: $o-brand-secondary;
+$body-bg: #f8fafc;            /* Clean light-slate background for the app */
+$body-color: #334155;
+
+// Typography
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 600;
+
+// Navbar Overrides
+$o-navbar-background: #0f172a; /* Deep Slate Navbar */
+$o-navbar-color: #f8fafc;
+$o-navbar-hover-background: #1e293b;
+
+// Modern Rounded Corners (Material 3 / Modern flat feels)
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-sm: 6px;
+$btn-border-radius: 8px;
+$input-border-radius: 8px;
+
+// Specific Form & View background adjustments
+$o-view-background-color: #ffffff;
+$o-list-footer-bg-color: #f1f5f9;
