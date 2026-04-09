@@ -5,9 +5,10 @@
     'summary': 'White-labeling and UI alignment for WeberQ Global',
     'author': 'Pranay Kiran',
     'website': 'https://weberq.in',
-    'depends': ['web'],
+    'depends': ['web', 'mail', 'auth_signup'],
     'data': [
         'views/layout_templates.xml',
+        'data/mail_template_overrides.xml',
     ],
     'assets': {
         'web._assets_primary_variables': [
