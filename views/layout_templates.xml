@@ -9,10 +9,10 @@
     </template>
 
     <template id="weberq_portal_footer" inherit_id="web.frontend_layout">
-        <xpath expr="//div[contains(@class, 'o_footer_copyright')]" position="replace">
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
             <div class="o_footer_copyright py-3">
                 <div class="container d-flex justify-content-between align-items-center">
-                    <span>Quantum-grade Industrial Tech | WeberQ</span>
+                    <span class="o_footer_copyright_name">Quantum-grade Industrial Tech | WeberQ</span>
                     <span class="text-muted">© 2026 All Rights Reserved.</span>
                 </div>
             </div>
