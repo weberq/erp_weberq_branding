@@ -24,6 +24,13 @@
     </template>
 
     <!-- Override all Auth Signup email records to replace Odoo references with dynamic company names -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'auth_signup'), ('name', 'in', ['set_password_email', 'portal_set_password_email', 'mail_template_user_signup_account_created'])]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+
     <record id="auth_signup.set_password_email" model="mail.template">
         <field name="subject">{{ object.create_uid.name }} from {{ object.company_id.name }} invites you to connect to {{ object.company_id.name }}</field>
         <field name="body_html" type="html">
@@ -262,5 +269,12 @@
 </td></tr>
 </table></field>
     </record>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'auth_signup'), ('name', 'in', ['set_password_email', 'portal_set_password_email', 'mail_template_user_signup_account_created'])]"/>
+        </function>
+        <value eval="{'noupdate': True}"/>
+    </function>
 
 </odoo>
