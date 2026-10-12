@@ -1,10 +1,11 @@
 {
     'name': 'WeberQ ERP Branding',
-    'version': '1.0',
+    'version': '20.0.1.0.0',
     'category': 'Customization',
     'summary': 'White-labeling and UI alignment for WeberQ Global',
     'author': 'Pranay Kiran',
     'website': 'https://weberq.in',
+    'license': 'LGPL-3',
     'depends': ['web', 'mail', 'auth_signup'],
     'data': [
         'views/layout_templates.xml',
