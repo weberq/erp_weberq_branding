@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- WeberQ Bot, the digest, the name of the installed app -->
+    <function model="weberq.branding" name="_rebrand_records"/>
+    <function model="weberq.branding" name="_rebrand_translations"/>
+
+    <data noupdate="1">
+        <!-- Updates of other modules bring Odoo's texts back -->
+        <record id="ir_cron_rebrand_translations" model="ir.cron">
+            <field name="name">Branding: rebrand translated texts</field>
+            <field name="model_id" ref="model_weberq_branding"/>
+            <field name="state">code</field>
+            <field name="code">model._rebrand_translations()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+    </data>
+</odoo>

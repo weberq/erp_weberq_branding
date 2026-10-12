@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Pages: title and favicon when the page sets none -->
+    <template id="weberq_layout" inherit_id="web.layout">
+        <xpath expr="//title" position="attributes">
+            <attribute name="t-out">title or 'WeberQ ERP'</attribute>
+        </xpath>
+        <xpath expr="//link[@rel='shortcut icon']" position="attributes">
+            <attribute name="t-att-href">x_icon or '/weberq_branding/static/img/favicon.ico'</attribute>
+        </xpath>
+    </template>
+
+    <!-- Link previews of the login page -->
+    <template id="weberq_login_opengraph" inherit_id="web.login">
+        <xpath expr="//meta[@property='og:site_name']" position="attributes">
+            <attribute name="content">WeberQ ERP</attribute>
+        </xpath>
+        <xpath expr="//meta[@property='og:description']" position="attributes">
+            <attribute name="content">WeberQ Global ERP</attribute>
+        </xpath>
+        <xpath expr="//meta[@property='og:image:alt']" position="attributes">
+            <attribute name="content">WeberQ ERP</attribute>
+        </xpath>
+        <xpath expr="//meta[@name='twitter:site']" position="replace"/>
+        <xpath expr="//meta[@name='twitter:description']" position="attributes">
+            <attribute name="content">WeberQ Global ERP</attribute>
+        </xpath>
+    </template>
+
     <template id="weberq_login_footer" inherit_id="web.login_layout">
         <xpath expr="//div[@t-if='not disable_footer']" position="replace">
             <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
-                <span class="text-muted">© 2026 WeberQ Global Pvt Ltd.</span>
+                <span class="text-muted">© <t t-out="datetime.date.today().year"/> WeberQ Global Pvt Ltd.</span>
             </div>
         </xpath>
+    </template>
+
+    <!-- "Powered by" blocks of the frontend pages -->
+    <template id="weberq_brand_promotion_message" inherit_id="web.brand_promotion_message">
+        <xpath expr="//t[@t-out]" position="replace"/>
     </template>
 
     <template id="weberq_portal_footer" inherit_id="web.frontend_layout">
@@ -13,9 +45,49 @@
             <div class="o_footer_copyright py-3">
                 <div class="container d-flex justify-content-between align-items-center">
                     <span class="o_footer_copyright_name">Quantum-grade Industrial Tech | WeberQ</span>
-                    <span class="text-muted">© 2026 All Rights Reserved.</span>
+                    <span class="text-muted">© <t t-out="datetime.date.today().year"/> All Rights Reserved.</span>
                 </div>
             </div>
         </xpath>
+    </template>
+
+    <template id="weberq_portal_sidebar" inherit_id="portal.portal_record_sidebar">
+        <xpath expr="//div[contains(text(), 'Powered by')]" position="replace"/>
+    </template>
+
+    <!-- The page of the installed app when the network is down -->
+    <template id="weberq_webclient_offline" inherit_id="web.webclient_offline">
+        <xpath expr="//img" position="attributes">
+            <attribute name="alt">WeberQ ERP</attribute>
+        </xpath>
+        <xpath expr="//p[contains(text(), 'will load as soon')]" position="replace">
+            <p>Check your network connection and come back here. WeberQ ERP will load as soon as you're back online.</p>
+        </xpath>
+    </template>
+
+    <!-- Reports in HTML and the public pages of Discuss -->
+    <template id="weberq_report_layout" inherit_id="web.report_layout">
+        <xpath expr="//title" position="attributes">
+            <attribute name="t-out">title or 'WeberQ ERP Report'</attribute>
+        </xpath>
+    </template>
+    <template id="weberq_report_preview_layout" inherit_id="web.report_preview_layout">
+        <xpath expr="//title" position="attributes">
+            <attribute name="t-out">title or 'WeberQ ERP Report'</attribute>
+        </xpath>
+    </template>
+    <template id="weberq_discuss_public" inherit_id="mail.discuss_public_channel_template">
+        <xpath expr="//title" position="attributes">
+            <attribute name="t-out">title or 'WeberQ ERP'</attribute>
+        </xpath>
+    </template>
+
+    <!-- Digest emails -->
+    <template id="weberq_digest_mail_main" inherit_id="digest.digest_mail_main">
+        <xpath expr="//div[hasclass('by_odoo')]/a" position="replace">
+            <span>WeberQ ERP</span>
+        </xpath>
+        <xpath expr="//p[@id='powered']" position="replace"/>
+        <xpath expr="//t[@t-call='digest.digest_section_mobile']" position="replace"/>
     </template>
 </odoo>

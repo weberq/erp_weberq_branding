@@ -1,0 +1,6 @@
+// Settings of features that only exist in the Enterprise edition
+.o_setting_box:has(.o_field_upgrade_boolean),
+.o_setting_box:has(.o_enterprise_label),
+.o_setting_container > .row:has(.o_enterprise_label) {
+    display: none !important;
+}
